@@ -14,7 +14,7 @@ class Facebook(object):
         self.BASE_URL = 'https://graph.facebook.com/'+self.version+'/'
         
         self.system_user = system_user
-        self.generate_access_token(system_user['access_token'])
+        self._generate_access_token(system_user['access_token'])
         self.app_set = False
         
     def set_appId_pageId(self, appId, appSecret, pageId):
@@ -30,7 +30,7 @@ class Facebook(object):
         self.pageId = pageId
         self.app_set = True
         
-    def generate_access_token(self, system_user_token):
+    def _generate_access_token(self, system_user_token):
         """It will generate access token for passed system user if no token is present
 
         Args:
